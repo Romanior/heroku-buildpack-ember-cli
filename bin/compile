@@ -51,5 +51,5 @@ npm install bower
 npm install --verbose
 
 status "Building Ember CLI application $build_env distribution"
-node_modules/.bin/bower install
-node_modules/ember-cli/bin/ember build --environment
+$build_dir/node_modules/.bin/bower install
+$build_dir/vnode_modules/ember-cli/bin/ember build --environment
