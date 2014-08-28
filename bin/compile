@@ -16,6 +16,7 @@ export_env_dir $env_dir
 build_env=${EMBER_ENV:-production}
 
 mkdir -p $build_dir/vendor
+mkdir -p $build_dir/node_modules
 
 status "Downloading and installing node"
 node_version=0.10.30
@@ -47,7 +48,7 @@ cd $build_dir
 status "Installing dependencies"
 trap cat_npm_debug_log ERR # Output npm debug info on error
 npm install bower
-npm install
+npm install --verbose
 
 status "Building Ember CLI application $build_env distribution"
 node_modules/.bin/bower install
