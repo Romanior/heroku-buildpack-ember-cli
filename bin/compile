@@ -46,9 +46,9 @@ cd $build_dir
 
 status "Installing dependencies"
 trap cat_npm_debug_log ERR # Output npm debug info on error
-npm install bower --quiet | indent
-npm install --quiet | indent
+npm install bower
+npm install
 
 status "Building Ember CLI application $build_env distribution"
-node_modules/.bin/bower install --quiet | indent
-node_modules/ember-cli/bin/ember build --environment $build_env | indent
+node_modules/.bin/bower install
+node_modules/ember-cli/bin/ember build --environment
